@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/escena/hechicera-guerrera.webp" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="assets/escena/hechicera-guerrera.webp" media="(min-width: 621px)" />
+  <link rel="preload" as="image" href="assets/escena/sorceress-mobile.webp" media="(max-width: 620px)" />
+  <link rel="preload" as="image" href="assets/escena/warrior-mobile.webp" media="(max-width: 620px)" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Akali Suply · Tu juego nuestro suply" />
@@ -100,10 +102,16 @@
       <section class="hero" id="escena">
       <div class="scene-split" aria-hidden="true">
         <div class="scene-half scene-half-l">
-          <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+          <picture>
+            <source media="(max-width: 620px)" srcset="assets/escena/sorceress-mobile.webp" type="image/webp" />
+            <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+          </picture>
         </div>
         <div class="scene-half scene-half-r">
-          <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+          <picture>
+            <source media="(max-width: 620px)" srcset="assets/escena/warrior-mobile.webp" type="image/webp" />
+            <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+          </picture>
         </div>
         <span class="scene-seam"></span>
       </div>

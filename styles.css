@@ -458,6 +458,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 .cart-btn {
   position: relative;
   display: inline-flex;
+  flex: none;
   align-items: center;
   justify-content: center;
   width: 44px; height: 44px;
@@ -493,6 +494,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
 
 .menu-btn {
   display: none;
+  flex: none;
   flex-direction: column;
   gap: 5px;
   width: 44px; height: 44px;
@@ -1622,6 +1624,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   .nav a { padding: 13px 10px; font-size: 1rem; border-radius: 12px; }
   .nav a + a { border-top: 1px solid rgba(160, 138, 255, 0.08); }
   .menu-btn { display: flex; }
+  .header-actions { margin-left: auto; }
   .hide-sm { display: none; }
   .btn-ghost { width: 44px; height: 44px; padding: 0; border-radius: 50%; }
   .footer-inner { grid-template-columns: 1fr; }

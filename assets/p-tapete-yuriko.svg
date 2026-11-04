@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Tapete de juego Yuriko con luna creciente y shuriken">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#231a45"/>
+      <stop offset=".6" stop-color="#130e26"/>
+      <stop offset="1" stop-color="#07050f"/>
+    </radialGradient>
+    <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241b47"/><stop offset=".5" stop-color="#181132"/><stop offset="1" stop-color="#0f0b20"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f2ff"/><stop offset="1" stop-color="#a58fe0"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2ecff"/><stop offset=".55" stop-color="#c3b0ff"/><stop offset="1" stop-color="#7a63c4"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="180" r="158" fill="url(#halo)"/>
+  <g stroke="#b49cff" fill="none" opacity=".14">
+    <circle cx="240" cy="180" r="140" stroke-width="1.4"/>
+    <circle cx="240" cy="180" r="120" stroke-dasharray="4 10"/>
+  </g>
+
+  <ellipse cx="240" cy="312" rx="166" ry="18" fill="#000" opacity=".6" filter="url(#blur)"/>
+
+  <g transform="translate(240 192) scale(1.16) translate(-240 -196)">
+    <polygon points="46,192 240,100 434,192 240,292" fill="url(#mat)" stroke="#33264f" stroke-width="2"/>
+    <polygon points="58,192 240,108 422,192 240,284" fill="none" stroke="#b9a0ff" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="7 5"/>
+
+    <!-- zonas -->
+    <g stroke="#b9a0ff" stroke-opacity=".4" fill="#8b6bff" fill-opacity=".06" stroke-width="1.2" stroke-dasharray="4 3">
+      <polygon points="126,208 166,189 194,202 154,221" />
+      <polygon points="286,221 314,208 354,189 326,202" />
+    </g>
+    <g fill="#d9ccff" opacity=".45" font-family="Segoe UI, Arial, sans-serif" font-size="7" letter-spacing="1">
+      <text x="139" y="209">EXILE</text>
+      <text x="304" y="212">GY</text>
+    </g>
+
+    <!-- luna en el tapete -->
+    <g transform="translate(240 172)">
+      <defs>
+        <mask id="matMoonMask">
+          <circle r="40" fill="#fff"/>
+          <circle cx="18" cy="-8" r="34" fill="#000"/>
+        </mask>
+      </defs>
+      <circle r="40" fill="url(#moon)" opacity=".92" mask="url(#matMoonMask)"/>
+      <circle cx="52" cy="-30" r="2" fill="#e6dbff" opacity=".8"/>
+      <circle cx="64" cy="6" r="1.4" fill="#e6dbff" opacity=".6"/>
+      <circle cx="46" cy="34" r="1.6" fill="#e6dbff" opacity=".5"/>
+    </g>
+
+    <!-- shuriken -->
+    <g transform="translate(300 206) scale(.42)" fill="url(#steel)" opacity=".95">
+      <path d="M0 -40 L9 -10 L40 0 L9 10 L0 40 L-9 10 L-40 0 L-9 -10 Z"/>
+      <circle r="6.5" fill="#120c22"/>
+    </g>
+
+    <!-- comandante -->
+    <g transform="translate(190 254) scale(1 .5)">
+      <ellipse rx="46" ry="26" fill="none" stroke="#c3a4ff" stroke-opacity=".45" stroke-width="2.2" stroke-dasharray="6 5"/>
+    </g>
+
+    <polygon points="46,192 240,100 434,192 240,292" fill="none" stroke="#e2d6ff" stroke-opacity=".16"/>
+  </g>
+</svg>

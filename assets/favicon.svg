@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2d6ff"/>
+      <stop offset=".55" stop-color="#8b6bff"/>
+      <stop offset="1" stop-color="#b45cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0c0817"/>
+  <defs>
+    <mask id="favMoon">
+      <circle cx="29" cy="32" r="17" fill="#fff"/>
+      <circle cx="38" cy="27" r="15" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="29" cy="32" r="17" fill="url(#g)" mask="url(#favMoon)"/>
+  <path d="M44 26 L46.6 31.4 L52 34 L46.6 36.6 L44 42 L41.4 36.6 L36 34 L41.4 31.4 Z" fill="url(#g)"/>
+  <circle cx="44" cy="34" r="1.6" fill="#0c0817"/>
+</svg>

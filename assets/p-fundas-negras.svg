@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Fundas negras de 100 unidades">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="72%">
+      <stop offset="0" stop-color="#2a2540"/>
+      <stop offset=".6" stop-color="#14121f"/>
+      <stop offset="1" stop-color="#0a0910"/>
+    </radialGradient>
+    <linearGradient id="black1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3c3a4d"/><stop offset=".5" stop-color="#1a1826"/><stop offset="1" stop-color="#0b0a12"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26223a"/><stop offset="1" stop-color="#100e1a"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="190" r="150" fill="url(#halo)"/>
+  <g stroke="#a48bff" fill="none" opacity=".13">
+    <circle cx="240" cy="190" r="140" stroke-width="1.4"/>
+    <circle cx="240" cy="190" r="118" stroke-dasharray="4 10"/>
+  </g>
+
+  <ellipse cx="240" cy="336" rx="128" ry="16" fill="#000" opacity=".6" filter="url(#blur)"/>
+
+  <g id="fan" transform="translate(240 336) scale(1.42) translate(-240 -336)">
+    <!-- sleeve -24 -->
+    <g transform="rotate(-26 240 336)">
+      <rect x="188" y="176" width="104" height="158" rx="7" fill="url(#black1)" stroke="#4b4763" stroke-width="1.2"/>
+      <rect x="197" y="187" width="86" height="136" rx="4" fill="url(#inner)"/>
+      <path d="M188 176 h104 v158 h-104z" fill="none" opacity=".2" stroke="#fff"/>
+    </g>
+    <!-- sleeve -13 -->
+    <g transform="rotate(-13 240 336)">
+      <rect x="188" y="172" width="104" height="162" rx="7" fill="url(#black1)" stroke="#565173" stroke-width="1.2"/>
+      <rect x="197" y="183" width="86" height="140" rx="4" fill="url(#inner)"/>
+      <path d="M197 183 h40 l-40 60z" fill="#fff" opacity=".05"/>
+    </g>
+    <!-- sleeve +13 -->
+    <g transform="rotate(13 240 336)">
+      <rect x="188" y="172" width="104" height="162" rx="7" fill="url(#black1)" stroke="#565173" stroke-width="1.2"/>
+      <rect x="197" y="183" width="86" height="140" rx="4" fill="url(#inner)"/>
+    </g>
+    <!-- sleeve +26 -->
+    <g transform="rotate(26 240 336)">
+      <rect x="188" y="176" width="104" height="158" rx="7" fill="url(#black1)" stroke="#4b4763" stroke-width="1.2"/>
+      <rect x="197" y="187" width="86" height="136" rx="4" fill="url(#inner)"/>
+    </g>
+
+    <!-- front sleeve -->
+    <g transform="rotate(0 240 336)">
+      <rect x="188" y="164" width="104" height="170" rx="8" fill="url(#black1)" stroke="#a394e0" stroke-width="1.6"/>
+      <rect x="197" y="175" width="86" height="148" rx="4" fill="url(#inner)" stroke="#6a5da0" stroke-width="1.2"/>
+      <path d="M197 175 h86 v40 l-86 46z" fill="#fff" opacity=".05"/>
+      <g transform="translate(240 244)" fill="none" stroke="#9d8cff" stroke-opacity=".55" stroke-width="1.6">
+        <circle r="20"/>
+        <path d="M0,-20 L17,10 L-17,10 Z"/>
+        <circle r="6" stroke-opacity=".35"/>
+      </g>
+      <rect x="188" y="164" width="104" height="170" rx="8" fill="none" stroke="#c9c0ff" stroke-opacity=".28"/>
+    </g>
+  </g>
+</svg>

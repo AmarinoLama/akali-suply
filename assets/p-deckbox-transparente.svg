@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Deckbox transparente con un mazo de cartas violeta dentro">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="72%">
+      <stop offset="0" stop-color="#2c2150"/>
+      <stop offset=".6" stop-color="#171027"/>
+      <stop offset="1" stop-color="#09060f"/>
+    </radialGradient>
+    <linearGradient id="glassTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".34"/>
+      <stop offset=".6" stop-color="#c9b8ff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="glassSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e4d9ff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#8f78c9" stop-opacity=".07"/>
+    </linearGradient>
+    <linearGradient id="glassFront" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d8c9ff" stop-opacity=".18"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#a98fe0" stop-opacity=".2"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b6bff"/><stop offset=".5" stop-color="#5b34d6"/><stop offset="1" stop-color="#2a1a5c"/>
+    </linearGradient>
+    <linearGradient id="deckTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a2a9e"/><stop offset="1" stop-color="#2a1663"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#9b7bff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#9b7bff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="13"/></filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="182" r="158" fill="url(#halo)"/>
+  <g stroke="#b49cff" fill="none" opacity=".14">
+    <circle cx="240" cy="182" r="140" stroke-width="1.4"/>
+    <circle cx="240" cy="182" r="118" stroke-dasharray="3 10"/>
+  </g>
+
+  <ellipse cx="240" cy="300" rx="124" ry="20" fill="#050309" opacity=".65" filter="url(#blur)"/>
+
+  <!-- mazo dentro -->
+  <g>
+    <polygon points="240,208 350,152 350,236 240,292" fill="url(#deck)"/>
+    <polygon points="240,208 292,182 402,236 350,262" fill="url(#deckTop)"/>
+    <g stroke="#c3b0ff" stroke-opacity=".35" stroke-width="1.2">
+      <line x1="244" y1="212" x2="350" y2="158"/>
+      <line x1="244" y1="222" x2="350" y2="168"/>
+      <line x1="244" y1="232" x2="350" y2="178"/>
+    </g>
+    <g transform="translate(295 250)">
+      <circle r="17" fill="none" stroke="#e0d2ff" stroke-opacity=".55" stroke-width="1.6"/>
+      <path d="M0,-11 L11,0 L0,11 L-11,0 Z" fill="none" stroke="#e0d2ff" stroke-opacity=".65" stroke-width="1.5"/>
+      <circle r="3.4" fill="#e0d2ff" opacity=".65"/>
+    </g>
+  </g>
+
+  <!-- cuerpo de metacrilato -->
+  <g>
+    <polygon points="112,148 240,84 368,148 240,212" fill="url(#glassTop)"/>
+    <polygon points="112,148 240,212 240,294 112,230" fill="url(#glassSide)"/>
+    <polygon points="368,148 240,212 240,294 368,230" fill="url(#glassFront)"/>
+
+    <polygon points="112,148 240,84 368,148 240,212" fill="none" stroke="#f2ebff" stroke-opacity=".65" stroke-width="1.6"/>
+    <polygon points="112,148 240,212 240,294 112,230" fill="none" stroke="#e9e0ff" stroke-opacity=".4" stroke-width="1.4"/>
+    <polygon points="368,148 240,212 240,294 368,230" fill="none" stroke="#e9e0ff" stroke-opacity=".45" stroke-width="1.4"/>
+    <line x1="240" y1="212" x2="240" y2="294" stroke="#fff" stroke-opacity=".5"/>
+
+    <!-- tapa -->
+    <polyline points="112,166 240,230 368,166" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/>
+    <polygon points="120,152 240,94 360,152 240,204" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1"/>
+
+    <!-- reflejos -->
+    <polygon points="130,156 240,102 296,130 186,184" fill="#fff" opacity=".1"/>
+    <polygon points="330,164 356,178 356,214 330,200" fill="#fff" opacity=".08"/>
+    <path d="M132 200 L132 236" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- pestaña del cierre -->
+    <rect x="226" y="248" width="28" height="10" rx="5" fill="#fff" opacity=".18" stroke="#fff" stroke-opacity=".4"/>
+  </g>
+</svg>

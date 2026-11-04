@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Dado D20 de metal dorado">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#3a2a5e"/>
+      <stop offset=".6" stop-color="#1a1130"/>
+      <stop offset="1" stop-color="#0a0714"/>
+    </radialGradient>
+    <linearGradient id="gold1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe4ff"/><stop offset=".45" stop-color="#a98cff"/><stop offset="1" stop-color="#4b2fa0"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cbb8ff"/><stop offset="1" stop-color="#5a3bb5"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f6cff"/><stop offset="1" stop-color="#2a1663"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="176" r="165" fill="url(#halo)"/>
+  <g stroke="#b49cff" fill="none" opacity=".15">
+    <circle cx="240" cy="180" r="140" stroke-width="1.5"/>
+    <circle cx="240" cy="180" r="118" stroke-dasharray="4 10"/>
+    <circle cx="240" cy="180" r="158" stroke-dasharray="1 14"/>
+  </g>
+
+  <ellipse cx="240" cy="292" rx="96" ry="18" fill="#000" opacity=".65" filter="url(#blur)"/>
+
+  <!-- gem d20 -->
+  <g>
+    <polygon points="240,54 344,114 344,246 240,306 136,246 136,114" fill="url(#gold2)"/>
+    <polygon points="240,175 240,54 344,114" fill="url(#gold1)"/>
+    <polygon points="240,175 344,114 344,246" fill="url(#gold3)"/>
+    <polygon points="240,175 344,246 240,306" fill="url(#gold2)"/>
+    <polygon points="240,175 240,306 136,246" fill="url(#gold3)"/>
+    <polygon points="240,175 136,246 136,114" fill="url(#gold2)"/>
+    <polygon points="240,175 136,114 240,54" fill="url(#gold1)"/>
+    <polygon points="240,120 292,206 188,206" fill="none" stroke="#f3ecff" stroke-opacity=".5" stroke-width="1.8"/>
+    <polygon points="240,54 344,114 344,246 240,306 136,246 136,114" fill="none" stroke="#f3ecff" stroke-opacity=".55" stroke-width="2"/>
+    <text x="240" y="196" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="800" fill="#2a1663">20</text>
+    <circle cx="282" cy="118" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#e6dbff">
+    <path d="M96 96 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z" opacity=".85"/>
+    <path d="M386 232 l2.4 7 7 2.4 -7 2.4 -2.4 7 -2.4 -7 -7 -2.4 7 -2.4z" opacity=".7"/>
+    <path d="M356 78 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" opacity=".5"/>
+  </g>
+</svg>

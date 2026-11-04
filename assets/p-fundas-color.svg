@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Fundas de colores de 100 unidades">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="72%">
+      <stop offset="0" stop-color="#262a45"/>
+      <stop offset=".6" stop-color="#131420"/>
+      <stop offset="1" stop-color="#090a11"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff6fae" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#ff6fae" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8fb8"/><stop offset="1" stop-color="#c02263"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ee7ff"/><stop offset="1" stop-color="#1163a8"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe07a"/><stop offset="1" stop-color="#b47a06"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9f7a4"/><stop offset="1" stop-color="#1f8a46"/></linearGradient>
+    <linearGradient id="c5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3a4ff"/><stop offset="1" stop-color="#5a2fc0"/></linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="190" r="152" fill="url(#halo)"/>
+  <g stroke="#ffa3c8" fill="none" opacity=".12">
+    <circle cx="240" cy="190" r="142" stroke-width="1.4"/>
+    <circle cx="240" cy="190" r="120" stroke-dasharray="3 9"/>
+  </g>
+
+  <ellipse cx="240" cy="336" rx="130" ry="16" fill="#000" opacity=".6" filter="url(#blur)"/>
+
+  <g transform="translate(240 336) scale(1.42) translate(-240 -336)">
+    <g transform="rotate(-28 240 336)">
+      <rect x="188" y="180" width="104" height="156" rx="7" fill="url(#c2)" stroke="#9fe9ff" stroke-opacity=".4"/>
+      <rect x="197" y="191" width="86" height="134" rx="4" fill="#0d1826" opacity=".85"/>
+    </g>
+    <g transform="rotate(-14 240 336)">
+      <rect x="188" y="172" width="104" height="164" rx="7" fill="url(#c4)" stroke="#c8ffc4" stroke-opacity=".4"/>
+      <rect x="197" y="183" width="86" height="142" rx="4" fill="#0d1a12" opacity=".85"/>
+    </g>
+    <g transform="rotate(14 240 336)">
+      <rect x="188" y="172" width="104" height="164" rx="7" fill="url(#c3)" stroke="#fff0b8" stroke-opacity=".4"/>
+      <rect x="197" y="183" width="86" height="142" rx="4" fill="#1d1707" opacity=".85"/>
+    </g>
+    <g transform="rotate(28 240 336)">
+      <rect x="188" y="180" width="104" height="156" rx="7" fill="url(#c1)" stroke="#ffd3e3" stroke-opacity=".4"/>
+      <rect x="197" y="191" width="86" height="134" rx="4" fill="#23101a" opacity=".85"/>
+    </g>
+
+    <!-- front sleeve -->
+    <g>
+      <ellipse cx="240" cy="340" rx="60" ry="12" fill="#000" opacity=".55" filter="url(#blur)"/>
+      <rect x="188" y="160" width="104" height="174" rx="8" fill="url(#c5)" stroke="#e0d2ff" stroke-opacity=".55" stroke-width="1.4"/>
+      <rect x="197" y="171" width="86" height="148" rx="4" fill="#140d26" opacity=".9"/>
+      <rect x="188" y="160" width="104" height="174" rx="8" fill="url(#sheen)"/>
+      <g transform="translate(240 240)" fill="none" stroke="#c7b4ff" stroke-width="1.6" stroke-opacity=".7">
+        <circle r="21"/><circle r="8"/>
+        <path d="M0,-21 L0,21 M-21,0 L21,0" stroke-opacity=".25"/>
+      </g>
+      <rect x="188" y="160" width="104" height="174" rx="8" fill="none" stroke="#fff" stroke-opacity=".25"/>
+    </g>
+  </g>
+</svg>

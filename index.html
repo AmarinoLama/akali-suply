@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akali Suply · Tu juego nuestro suply</title>
+  <meta name="description" content="Akali Suply, supply para Magic: The Gathering. Fundas negras 5 € y de color 6 €, D20 a 2 €, dados +1/+1 a 1,50 € y deckbox transparente 6 €. Pide por WhatsApp." />
+  <meta name="theme-color" content="#0b0716" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/escena/hechicera-guerrera.webp" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Akali Suply · Tu juego nuestro suply" />
+  <meta property="og:description" content="Supply MTG con alma de Yuriko y Liliana: fundas, dados y deckboxes. Pídelo por WhatsApp." />
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+
+  <div class="spark-layer" id="sparkLayer" aria-hidden="true"></div>
+
+  <div class="bg-fx" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="grid-lines"></span>
+    <svg class="bg-moon" viewBox="0 0 300 300">
+      <defs>
+        <linearGradient id="bgMoonGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#d9ccff" />
+          <stop offset="1" stop-color="#8b6bff" />
+        </linearGradient>
+        <mask id="bgMoonMask">
+          <circle cx="140" cy="150" r="132" fill="#fff" />
+          <circle cx="196" cy="118" r="118" fill="#000" />
+        </mask>
+      </defs>
+      <circle cx="140" cy="150" r="132" fill="url(#bgMoonGrad)" mask="url(#bgMoonMask)" />
+    </svg>
+
+    <div class="bg-particles" id="bgParticles"></div>
+    <span class="cursor-glow" id="cursorGlow"></span>
+  </div>
+
+  <header class="site-header" id="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Akali Suply, inicio">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e2d6ff" />
+              <stop offset=".55" stop-color="#8b6bff" />
+              <stop offset="1" stop-color="#b45cff" />
+            </linearGradient>
+            <mask id="brandMoonMask">
+              <circle cx="27" cy="32" r="17" fill="#fff" />
+              <circle cx="37" cy="26.5" r="15" fill="#000" />
+            </mask>
+          </defs>
+          <rect x="2.5" y="2.5" width="59" height="59" rx="17" fill="#140e26" stroke="url(#brandGrad)" stroke-opacity=".35" />
+          <circle cx="27" cy="32" r="17" fill="url(#brandGrad)" mask="url(#brandMoonMask)" />
+          <path d="M46 22 L48.7 28.5 L55 31.2 L48.7 33.9 L46 40.4 L43.3 33.9 L37 31.2 L43.3 28.5 Z" fill="url(#brandGrad)" />
+          <circle cx="46" cy="31.2" r="1.7" fill="#140e26" />
+        </svg>
+        <span class="brand-text">
+          <strong>Akali Suply</strong>
+          <small>Tu juego nuestro suply</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a href="#catalogo" data-filter-link="dados">Dados</a>
+        <a href="#catalogo" data-filter-link="deckboxes">Deckboxes</a>
+        <a href="#catalogo" data-filter-link="fundas">Fundas</a>
+        <a href="#catalogo" data-filter-link="tapetes">Tapetes</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost wa-link" data-wa-text="Hola! Quería preguntaros por el supply de Akali Suply." href="#contacto">
+          <span class="icon" data-icon="whatsapp"></span>
+          <span class="hide-sm">WhatsApp</span>
+        </a>
+        <button class="cart-btn" id="cartBtn" type="button" aria-label="Abrir carrito" aria-controls="cartPanel" aria-expanded="false">
+          <span class="icon" data-icon="bag"></span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="intro-pin">
+      <section class="hero" id="escena">
+      <div class="scene-split" aria-hidden="true">
+        <div class="scene-half scene-half-l">
+          <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+        </div>
+        <div class="scene-half scene-half-r">
+          <img src="assets/escena/hechicera-guerrera.webp" alt="" width="1672" height="941" decoding="async" draggable="false" />
+        </div>
+        <span class="scene-seam"></span>
+      </div>
+      <div class="scene-haze" aria-hidden="true"></div>
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse-dot"></span> Akali Suply · Stock real · Envío 24/48 h</p>
+          <h1>Tu juego<br /><em>nuestro suply</em>.</h1>
+          <p class="lead">
+            Supply para Magic: The Gathering con alma de <strong>Yuriko</strong> y
+            <strong>Liliana</strong>. Fundas, dados y deckboxes elegidos para que tu mazo
+            se sienta tan bien como juega. Los <strong>tapetes</strong>, muy pronto.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#catalogo">
+              Ver catálogo
+              <span class="icon" data-icon="arrow"></span>
+            </a>
+            <a class="btn btn-outline wa-link" data-wa-text="Hola! Quería preguntaros por el supply de Akali Suply." href="#contacto">
+              <span class="icon" data-icon="whatsapp"></span>
+              Pedir por WhatsApp
+            </a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>+500</strong><span>pedidos enviados</span></li>
+            <li><strong>24/48 h</strong><span>envío península</span></li>
+            <li><strong>4,9/5</strong><span>en reseñas</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <a class="scroll-cue" href="#catalogo" aria-label="Bajar al catálogo">
+        <span>Desliza para entrar</span>
+        <i aria-hidden="true"></i>
+      </a>
+      </section>
+    </div>
+
+    <div class="reveal-wrap">
+      <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Tu juego nuestro suply</span><span>·</span><span>Fundas negras 5 €</span><span>·</span>
+        <span>Fundas de color 6 €</span><span>·</span><span>D20 2 €</span><span>·</span>
+        <span>Dados +1/+1 1,50 €</span><span>·</span><span>Deckbox transparente 6 €</span><span>·</span>
+        <span>Tapetes próximamente</span><span>·</span><span>Yuriko · Liliana</span><span>·</span>
+        <span>Tu juego nuestro suply</span><span>·</span><span>Fundas negras 5 €</span><span>·</span>
+        <span>Fundas de color 6 €</span><span>·</span><span>D20 2 €</span><span>·</span>
+        <span>Dados +1/+1 1,50 €</span><span>·</span><span>Deckbox transparente 6 €</span><span>·</span>
+        <span>Tapetes próximamente</span><span>·</span><span>Yuriko · Liliana</span><span>·</span>
+      </div>
+    </div>
+
+    <section class="catalog section" id="catalogo">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">El catálogo</p>
+            <h2>Precios de verdad</h2>
+          </div>
+          <p class="section-sub">
+            Añade al carrito y cierra el pedido por WhatsApp en un par de toques.
+            Te confirmamos stock y envío al momento.
+          </p>
+        </div>
+
+        <div class="filters" id="filters" role="tablist" aria-label="Filtrar productos">
+          <button class="chip is-active" type="button" data-filter="todo" role="tab" aria-selected="true">Todo</button>
+          <button class="chip" type="button" data-filter="dados" role="tab" aria-selected="false">Dados</button>
+          <button class="chip" type="button" data-filter="deckboxes" role="tab" aria-selected="false">Deckboxes</button>
+          <button class="chip" type="button" data-filter="fundas" role="tab" aria-selected="false">Fundas</button>
+          <button class="chip" type="button" data-filter="tapetes" role="tab" aria-selected="false">Tapetes</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <p class="empty-state" id="emptyState" hidden>No hay productos en esta categoría.</p>
+      </div>
+      </section>
+    </div>
+
+    <section class="sleeves section" id="fundas">
+      <div class="wrap">
+        <div class="sleeves-panel reveal">
+          <div class="sleeves-copy">
+            <p class="eyebrow">Las de siempre</p>
+            <h2>Fundas para cada mazo</h2>
+            <p>Las negras son el clásico que nunca falla. Si quieres que tu mazo destaque en la mesa, las de color tienen ese punto extra.</p>
+            <div class="price-tags">
+              <div class="price-tag">
+                <span class="swatch swatch-black"></span>
+                <div><strong>Negras</strong><small>Pack de 100 · mate</small></div>
+                <span class="price-tag-value">5 €</span>
+              </div>
+              <div class="price-tag price-tag-alt">
+                <span class="swatch swatch-color"></span>
+                <div><strong>Color</strong><small>Pack de 100 · 6 tonos</small></div>
+                <span class="price-tag-value">6 €</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="button" data-add-bundle="fundas-negras">
+              Añadir pack de negras
+              <span class="icon" data-icon="arrow"></span>
+            </button>
+          </div>
+          <div class="sleeves-art">
+            <img src="assets/p-fundas-negras.svg" alt="Fundas negras de 100 unidades" />
+            <img src="assets/p-fundas-color.svg" alt="Fundas de colores de 100 unidades" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews section" id="opiniones">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Opiniones</p>
+            <h2>Lo que dice la mesa</h2>
+          </div>
+          <div class="rating-box">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <div>
+              <strong>4,9/5</strong>
+              <small>139 opiniones de la comunidad</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <article class="review reveal">
+            <div class="review-head">
+              <span class="avatar" style="--tone: #8b6bff">A</span>
+              <div class="review-who">
+                <strong>Amán</strong>
+                <small>Yuriko · ninjutsu</small>
+              </div>
+              <div class="stars stars-sm" aria-label="5 de 5 estrellas">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “Mi Yuriko ya no roba cartas: ahora intimida. Llegué con las fundas negras
+              nuevas y dos D20 y toda la mesa empezó a contar mi daño en voz alta antes
+              de que atacara. Eso no lo hace el mazo, lo hace el equipo.”
+            </p>
+            <p class="review-meta">Fundas negras · D20 <span class="review-tag">compra verificada</span></p>
+          </article>
+
+          <article class="review reveal">
+            <div class="review-head">
+              <span class="avatar" style="--tone: #b45cff">G</span>
+              <div class="review-who">
+                <strong>Gabriel</strong>
+                <small>Liliana · control</small>
+              </div>
+              <div class="stars stars-sm" aria-label="5 de 5 estrellas">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “Compré un D20 para ‘tirar con estilo’ y acabé haciéndole una sesión de
+              fotos en la mesa. Rueda recto, pesa lo justo y el morado le pega a mi
+              Liliana como si viniera en el mismo estuche. Mi rival me pidió el enlace.”
+            </p>
+            <p class="review-meta">D20 · Deckbox transparente <span class="review-tag">compra verificada</span></p>
+          </article>
+
+          <article class="review reveal">
+            <div class="review-head">
+              <span class="avatar" style="--tone: #ff8ac0">S</span>
+              <div class="review-who">
+                <strong>Said</strong>
+                <small>EDH · contadores</small>
+              </div>
+              <div class="stars stars-sm" aria-label="5 de 5 estrellas">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “Un +1/+1 de 1,50 € me ha ganado dos partidas. Compré doce, los reparto
+              como si fueran caramelos y el color se lee desde la otra punta de la mesa.
+              El problema ahora es que mi grupo también quiere.”
+            </p>
+            <p class="review-meta">Dados +1/+1 · 12 uds. <span class="review-tag">compra verificada</span></p>
+          </article>
+
+          <article class="review reveal">
+            <div class="review-head">
+              <span class="avatar" style="--tone: #c3a4ff">H</span>
+              <div class="review-who">
+                <strong>Hanks</strong>
+                <small>Commander · organiza</small>
+              </div>
+              <div class="stars stars-sm" aria-label="5 de 5 estrellas">★★★★★</div>
+            </div>
+            <p class="review-text">
+              “Escribí un martes: ‘¿tenéis deckbox y fundas de color?’. El miércoles por
+              la tarde mi mazo ya estaba dentro. Sin líos, sin gastos raros y con una
+              conversación de diez minutos sobre qué tonalidad queda mejor en mesa.”
+            </p>
+            <p class="review-meta">Fundas de color · Deckbox <span class="review-tag">compra verificada</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks section" id="perks">
+      <div class="wrap perks-grid">
+        <article class="perk reveal">
+          <span class="perk-icon" data-icon="truck"></span>
+          <h3>Envío en 24/48 h</h3>
+          <p>Salimos el mismo día si compras antes de las 16:00. Sin sorpresas al pagar.</p>
+        </article>
+        <article class="perk reveal">
+          <span class="perk-icon" data-icon="shield"></span>
+          <h3>Stock real</h3>
+          <p>Nada de esperas eternas: lo que ves en la tienda está en la estantería.</p>
+        </article>
+        <article class="perk reveal">
+          <span class="perk-icon" data-icon="chat"></span>
+          <h3>Te asesoramos</h3>
+          <p>¿No sabes qué fundas combinan con tu mazo? Escríbenos y te ayudamos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacto">
+      <div class="wrap">
+        <div class="contact-panel reveal">
+          <div class="contact-glow" aria-hidden="true"></div>
+          <p class="eyebrow">¿Dudas de algo?</p>
+          <h2>Hablemos por WhatsApp</h2>
+          <p class="contact-copy">
+            Resolvemos stock, envíos, combinaciones de colores o cualquier cosa rara
+            que se te ocurra. Solemos contestar en menos de una hora.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-wa wa-link" data-wa-text="Hola! Tengo una duda sobre el supply de Akali Suply." href="#">
+              <span class="icon" data-icon="whatsapp"></span>
+              Contáctame
+            </a>
+          </div>
+          <ul class="contact-meta">
+            <li><span class="icon" data-icon="clock"></span> L-V · 10:00 – 20:00</li>
+            <li><span class="icon" data-icon="pin"></span> Envíos a toda España</li>
+            <li><span class="icon" data-icon="whatsapp"></span> +34 612 47 84 37</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <strong>Akali Suply</strong>
+        <p>Supply para Magic: The Gathering con alma de Yuriko y Liliana.</p>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del pie">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+        <a class="wa-link" data-wa-text="Hola! Tengo una duda sobre mi pedido en Akali Suply." href="#contacto">WhatsApp</a>
+      </nav>
+      <p class="footer-lema">Tu juego <em>nuestro suply</em></p>
+      <p class="footer-legal">
+        © <span id="year">2026</span> Akali Suply · Tienda no afiliada a Wizards of the Coast.
+        Magic: The Gathering, Yuriko y Liliana son marcas y personajes de Wizards of the Coast.
+      </p>
+    </div>
+  </footer>
+
+  <a class="wa-float wa-link" data-wa-text="Hola! Vengo de la web de Akali Suply." href="#" aria-label="Contactar por WhatsApp">
+    <span class="icon" data-icon="whatsapp"></span>
+  </a>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Carrito de la compra">
+    <div class="cart-head">
+      <h2>Tu pedido</h2>
+      <button class="icon-btn" id="cartClose" type="button" aria-label="Cerrar carrito">
+        <span class="icon" data-icon="close"></span>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot">
+      <div class="cart-row cart-row-total">
+        <span>Total</span>
+        <strong id="cartTotal">0,00 €</strong>
+      </div>
+      <p class="cart-note" id="cartNote">Te confirmamos stock y envío por WhatsApp.</p>
+      <a class="btn btn-primary btn-block" id="checkoutBtn" href="#" aria-disabled="true">
+        <span class="icon" data-icon="whatsapp"></span>
+        Finalizar por WhatsApp
+      </a>
+      <button class="link-btn" id="clearCart" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Dados de contadores +1/+1 y -1/-1 para Magic">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="72%">
+      <stop offset="0" stop-color="#2f2352"/>
+      <stop offset=".6" stop-color="#191129"/>
+      <stop offset="1" stop-color="#0b0714"/>
+    </radialGradient>
+    <linearGradient id="ivoryTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdfaff"/><stop offset="1" stop-color="#ddd2f3"/>
+    </linearGradient>
+    <linearGradient id="ivoryRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe8ff"/><stop offset="1" stop-color="#cdc0e8"/>
+    </linearGradient>
+    <linearGradient id="ivoryLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d4c8ee"/><stop offset="1" stop-color="#a99bc9"/>
+    </linearGradient>
+    <linearGradient id="darkTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#624c96"/><stop offset="1" stop-color="#2a1f45"/>
+    </linearGradient>
+    <linearGradient id="darkRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d2d61"/><stop offset="1" stop-color="#171027"/>
+    </linearGradient>
+    <linearGradient id="darkLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2044"/><stop offset="1" stop-color="#100a1c"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b6bff" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#8b6bff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+
+  <rect width="480" height="360" fill="url(#bg)"/>
+  <circle cx="240" cy="190" r="160" fill="url(#halo)"/>
+  <g stroke="#b49cff" fill="none" opacity=".14">
+    <circle cx="240" cy="190" r="142" stroke-width="1.4"/>
+    <circle cx="240" cy="190" r="120" stroke-dasharray="4 10"/>
+  </g>
+
+  <ellipse cx="240" cy="322" rx="136" ry="18" fill="#050309" opacity=".65" filter="url(#blur)"/>
+
+  <!-- dado oscuro (-1/-1), detrás -->
+  <g transform="translate(330 166) scale(.88)">
+    <polygon points="-86,16 0,-28 86,16 0,60" fill="url(#darkTop)"/>
+    <polygon points="0,60 86,16 86,92 0,136" fill="url(#darkRight)"/>
+    <polygon points="-86,16 0,60 0,136 -86,92" fill="url(#darkLeft)"/>
+    <polygon points="-86,16 0,-28 86,16 86,92 0,136 -86,92" fill="none" stroke="#c3b0ff" stroke-opacity=".4" stroke-width="1.4"/>
+    <text x="43" y="97" text-anchor="middle" dominant-baseline="central" transform="skewY(-26.6)"
+          font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#e2d6ff">-1/-1</text>
+  </g>
+
+  <!-- dado claro (+1/+1), delante -->
+  <g transform="translate(180 206)">
+    <polygon points="-96,18 0,-30 96,18 0,66" fill="url(#ivoryTop)"/>
+    <polygon points="0,66 96,18 96,102 0,150" fill="url(#ivoryRight)"/>
+    <polygon points="-96,18 0,66 0,150 -96,102" fill="url(#ivoryLeft)"/>
+    <polygon points="-96,18 0,-30 96,18 96,102 0,150 -96,102" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="1.4"/>
+    <polygon points="-96,18 0,-30 96,18 0,66" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="1.2"/>
+    <text x="48" y="108" text-anchor="middle" dominant-baseline="central" transform="skewY(-26.6)"
+          font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#4a2f8c">+1/+1</text>
+    <polygon points="0,66 96,18 96,102 0,150" fill="none" stroke="#9d7bff" stroke-opacity=".3" stroke-width="1.2"/>
+  </g>
+
+  <!-- dados pequeños -->
+  <g transform="translate(88 122) scale(.5)" opacity=".95">
+    <polygon points="-60,10 0,-22 60,10 0,42" fill="url(#darkTop)"/>
+    <polygon points="0,42 60,10 60,64 0,96" fill="url(#darkRight)"/>
+    <polygon points="-60,10 0,42 0,96 -60,64" fill="url(#darkLeft)"/>
+    <text x="30" y="68" text-anchor="middle" dominant-baseline="central" transform="skewY(-26.6)"
+          font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#cbb8ff">-1</text>
+  </g>
+
+  <g transform="translate(400 126) scale(.46)" opacity=".9">
+    <polygon points="-60,10 0,-22 60,10 0,42" fill="url(#ivoryTop)"/>
+    <polygon points="0,42 60,10 60,64 0,96" fill="url(#ivoryRight)"/>
+    <polygon points="-60,10 0,42 0,96 -60,64" fill="url(#ivoryLeft)"/>
+    <text x="30" y="68" text-anchor="middle" dominant-baseline="central" transform="skewY(-26.6)"
+          font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800" fill="#4a2f8c">+1</text>
+  </g>
+</svg>

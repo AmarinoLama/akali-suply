@@ -186,11 +186,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: calc(50% + 0.5px);
   overflow: hidden;
   will-change: translate, rotate, scale, opacity, filter;
-  opacity: calc(1 - var(--open) * var(--open) * 0.9);
-  filter: blur(calc(var(--open) * var(--open) * 2.4px));
+  opacity: calc(1 - var(--open) * var(--open) * 0.82);
+  filter: blur(calc(var(--open) * var(--open) * 10px)) saturate(calc(1 - var(--open) * 0.22));
 }
 .scene-half picture { display: contents; }
 .scene-half img {
@@ -206,21 +206,21 @@ ul { margin: 0; padding: 0; list-style: none; }
 .scene-half-l {
   left: 0;
   transform-origin: left center;
-  translate: calc(var(--open) * -52vw) calc(var(--open) * 2.2vh);
-  rotate: calc(var(--open) * -1.1deg);
-  scale: calc(1 + var(--open) * 0.16);
-  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - var(--open) * var(--open) * 34%), rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - var(--open) * var(--open) * 34%), rgba(0, 0, 0, 0) 100%);
+  translate: calc(var(--open) * -12vw) calc(var(--open) * 1.2vh);
+  rotate: calc(var(--open) * -0.45deg);
+  scale: calc(1 + var(--open) * 0.045);
+  -webkit-mask-image: linear-gradient(to right, #fff 0%, #fff calc(100% - var(--open) * var(--open) * 34%), transparent 100%);
+  mask-image: linear-gradient(to right, #fff 0%, #fff calc(100% - var(--open) * var(--open) * 34%), transparent 100%);
 }
 .scene-half-l img { left: 0; }
 .scene-half-r {
   right: 0;
   transform-origin: right center;
-  translate: calc(var(--open) * 52vw) calc(var(--open) * -2.2vh);
-  rotate: calc(var(--open) * 1.1deg);
-  scale: calc(1 + var(--open) * 0.16);
-  -webkit-mask-image: linear-gradient(to left, #000 0%, #000 calc(100% - var(--open) * var(--open) * 34%), rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to left, #000 0%, #000 calc(100% - var(--open) * var(--open) * 34%), rgba(0, 0, 0, 0) 100%);
+  translate: calc(var(--open) * 12vw) calc(var(--open) * -1.2vh);
+  rotate: calc(var(--open) * 0.45deg);
+  scale: calc(1 + var(--open) * 0.045);
+  -webkit-mask-image: linear-gradient(to left, #fff 0%, #fff calc(100% - var(--open) * var(--open) * 34%), transparent 100%);
+  mask-image: linear-gradient(to left, #fff 0%, #fff calc(100% - var(--open) * var(--open) * 34%), transparent 100%);
 }
 .scene-half-r img { left: -100%; }
 
@@ -230,12 +230,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   bottom: 0;
   left: 50%;
   z-index: 1;
-  width: calc(2px + var(--open) * 90px);
+  width: calc(1px + var(--open) * 70px);
   transform: translateX(-50%);
   background: linear-gradient(180deg, transparent, rgba(255, 143, 184, 0.5) 28%, rgba(139, 107, 255, 0.75) 52%, rgba(79, 240, 216, 0.4) 72%, transparent);
-  filter: blur(calc(1px + var(--open) * 9px));
-  opacity: calc(var(--open) * 1.2 * (1 - var(--fade)));
-  box-shadow: 0 0 80px 18px rgba(139, 107, 255, 0.18);
+  filter: blur(calc(0.5px + var(--open) * 8px));
+  opacity: calc(var(--open) * 0.95 * (1 - var(--fade)));
+  box-shadow: 0 0 70px 16px rgba(139, 107, 255, 0.16);
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -525,8 +525,8 @@ body.has-pointer .cursor-glow { opacity: 1; }
   padding: clamp(52px, 8vh, 104px) 0 clamp(84px, 10vh, 120px);
   overflow: hidden;
   isolation: isolate;
-  --open: clamp(0, calc(var(--scene, 0) / 0.45), 1);
-  --fade: clamp(0, calc((var(--scene, 0) - 0.45) / 0.17), 1);
+  --open: clamp(0, calc(var(--scene, 0) / 0.5), 1);
+  --fade: clamp(0, calc((var(--scene, 0) - 0.42) / 0.2), 1);
 }
 .hero .wrap { position: relative; z-index: 2; }
 .hero .hero-copy {
@@ -534,6 +534,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   filter: blur(calc(var(--fade) * 5px));
   translate: 0 calc(var(--fade) * -24px);
   scale: calc(1 - var(--fade) * 0.02);
+  will-change: opacity, filter, translate, scale;
 }
 .hero.is-revealed .hero-copy,
 .hero.is-revealed .scroll-cue {
@@ -1643,18 +1644,18 @@ body.has-pointer .cursor-glow { opacity: 1; }
   .scene-half img { width: 100%; height: 100%; left: 0; object-position: center top; }
   .scene-half-r img { left: 0; }
   .scene-half-l {
-    -webkit-mask-image: linear-gradient(to right, #fff 0%, #fff 86%, rgba(255, 255, 255, 0.5) 96%, transparent 100%);
-    mask-image: linear-gradient(to right, #fff 0%, #fff 86%, rgba(255, 255, 255, 0.5) 96%, transparent 100%);
+    translate: calc(var(--open) * -7vw) calc(var(--open) * 1vh);
+    -webkit-mask-image: linear-gradient(to right, #fff 0%, #fff calc(100% - var(--open) * 18%), transparent 100%);
+    mask-image: linear-gradient(to right, #fff 0%, #fff calc(100% - var(--open) * 18%), transparent 100%);
   }
   .scene-half-r {
-    -webkit-mask-image: linear-gradient(to left, #fff 0%, #fff 86%, rgba(255, 255, 255, 0.5) 96%, transparent 100%);
-    mask-image: linear-gradient(to left, #fff 0%, #fff 86%, rgba(255, 255, 255, 0.5) 96%, transparent 100%);
+    translate: calc(var(--open) * 7vw) calc(var(--open) * -1vh);
+    -webkit-mask-image: linear-gradient(to left, #fff 0%, #fff calc(100% - var(--open) * 18%), transparent 100%);
+    mask-image: linear-gradient(to left, #fff 0%, #fff calc(100% - var(--open) * 18%), transparent 100%);
   }
   .scene-haze {
     opacity: 1;
-    background:
-      linear-gradient(90deg, transparent 0%, rgba(7, 5, 13, 0.32) 44%, rgba(7, 5, 13, 0.48) 50%, rgba(7, 5, 13, 0.32) 56%, transparent 100%),
-      linear-gradient(180deg, rgba(7, 5, 13, 0.12) 0%, transparent 20%, rgba(7, 5, 13, 0.55) calc(var(--scene-h) - 52px), rgba(7, 5, 13, 0.96) calc(var(--scene-h) - 8px), var(--bg) var(--scene-h));
+    background: linear-gradient(180deg, rgba(7, 5, 13, 0.06) 0%, transparent 22%, rgba(7, 5, 13, 0.5) calc(var(--scene-h) - 52px), rgba(7, 5, 13, 0.96) calc(var(--scene-h) - 8px), var(--bg) var(--scene-h));
   }
   .hero h1 { font-size: clamp(2.25rem, 10vw, 2.9rem); margin-bottom: 14px; }
   .hero .lead { font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
@@ -1747,6 +1748,8 @@ body.has-pointer .cursor-glow { opacity: 1; }
     padding-bottom: 64px;
   }
   .scene-split { height: var(--scene-h); }
+  .scene-half-l { translate: calc(var(--open) * -6vw) calc(var(--open) * 0.8vh); }
+  .scene-half-r { translate: calc(var(--open) * 6vw) calc(var(--open) * -0.8vh); }
   .hero h1 { font-size: clamp(2rem, 9.5vw, 2.5rem); margin-bottom: 8px; }
   .hero .lead { font-size: 0.84rem; line-height: 1.45; margin-bottom: 12px; }
   .hero .eyebrow { margin-bottom: 10px; }

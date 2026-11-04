@@ -616,13 +616,36 @@ function initScene() {
   const pin = hero && hero.closest(".intro-pin");
   if (!hero || !pin) return;
 
-  const update = () => {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let target = 0;
+  let current = 0;
+  let rafId = 0;
+
+  const measure = () => {
     const introTop = pin.getBoundingClientRect().top + window.scrollY;
     const stickyTop = parseFloat(getComputedStyle(hero).top) || 0;
     const end = Math.max(1, introTop + pin.offsetHeight - hero.offsetHeight - stickyTop);
-    const progress = Math.min(1, Math.max(0, window.scrollY / end));
-    hero.style.setProperty("--scene", progress.toFixed(4));
-    hero.classList.toggle("is-revealed", progress > 0.58);
+    target = Math.min(1, Math.max(0, window.scrollY / end));
+  };
+
+  const paint = () => {
+    // La escena persigue al scroll con una inercia corta: nada de saltos.
+    current += (target - current) * 0.14;
+    if (Math.abs(target - current) < 0.0008) current = target;
+    hero.style.setProperty("--scene", current.toFixed(4));
+    hero.classList.toggle("is-revealed", current > 0.58);
+    rafId = current === target ? 0 : requestAnimationFrame(paint);
+  };
+
+  const update = () => {
+    measure();
+    if (reduce) {
+      current = target;
+      hero.style.setProperty("--scene", current.toFixed(4));
+      hero.classList.toggle("is-revealed", current > 0.58);
+      return;
+    }
+    if (!rafId) rafId = requestAnimationFrame(paint);
   };
 
   window.addEventListener("scroll", update, { passive: true });
